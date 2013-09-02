@@ -17,6 +17,7 @@ import org.springframework.messaging.handler.annotation.support.SessionIdMehtodA
 import org.springframework.messaging.handler.MessagingWebSocketHandler
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler
 import org.springframework.scheduling.TaskScheduler
+import org.eigengo.sogx.RecogSessionId
 
 /**
  * Contains the components that make up the web application. We require that it is mixed in with the
@@ -60,4 +61,78 @@ import org.springframework.scheduling.TaskScheduler
  *
  */
 trait WebConfig {
+  // require instances to be mixed in with CoreConfig
+  this: CoreConfig =>
+
+  // Channel for sending STOMP messages to connected WebSocket sessions
+  @Bean def webSocketHandlerChannel(): SubscribableChannel = new ExecutorSubscribableChannel(asyncExecutor())
+
+  @Bean def taskScheduler(): TaskScheduler = {
+    val taskScheduler = new ThreadPoolTaskScheduler()
+    taskScheduler.setThreadNamePrefix("SockJS-")
+    taskScheduler.setPoolSize(4)
+    taskScheduler.afterPropertiesSet()
+
+    taskScheduler
+  }
+
+  // MessageHandler that acts as a "simple" message broker
+  // See DispatcherServletInitializer for enabling/disabling the "simple-broker" profile
+  @Bean
+  def simpleBrokerMessageHandler(): SimpleBrokerMessageHandler = {
+    val handler = new SimpleBrokerMessageHandler(webSocketHandlerChannel(), util.Arrays.asList("/topic/", "/queue/"))
+    dispatchChannel().subscribe(handler)
+    handler
+  }
+
+  // WS -[SockJS]-> /sockjs/** ~> sockJsSocketHandler
+
+  // SockJS WS handler mapping
+  @Bean def sockJsHandlerMapping(): SimpleUrlHandlerMapping = {
+    val handler = new SubProtocolWebSocketHandler(dispatchChannel())
+    handler.setDefaultProtocolHandler(new StompProtocolHandler())
+    webSocketHandlerChannel().subscribe(handler)
+
+    val sockJsService = new DefaultSockJsService(taskScheduler())
+    val requestHandler = new SockJsHttpRequestHandler(sockJsService, handler)
+
+    val hm = new SimpleUrlHandlerMapping()
+    hm.setOrder(-2)
+    hm.setUrlMap(Collections.singletonMap("/sockjs/**", requestHandler))
+
+    hm
+  }
+
+  // WS -[Raw]-> /websocket/** ~> websocketSocketHandler
+
+  // Raw WS handler mapping
+  @Bean def webSocketHandlerMapping(): SimpleUrlHandlerMapping = {
+    val handler = new MessagingWebSocketHandler(dispatchChannel()) {
+      override def afterConnectionClosed(session: WebSocketSession, closeStatus: CloseStatus) {
+        recogSessions().sessionEnded(RecogSessionId(session.getId))
+      }
+    }
+    handler.setUriPrefix("/websocket/")
+
+    val requestHandler = new WebSocketHttpRequestHandler(handler)
+
+    val hm = new SimpleUrlHandlerMapping()
+    hm.setOrder(-1)
+    hm.setUrlMap(Collections.singletonMap("/websocket/**", requestHandler))
+
+    hm
+  }
+
+  // MessageHandler for processing messages by delegating to @Controller annotated methods
+  @Bean def annotationMethodMessageHandler(): AnnotationMethodMessageHandler = {
+    val handler = new AnnotationMethodMessageHandler(dispatchMessagingTemplate(), webSocketHandlerChannel())
+
+    handler.setCustomArgumentResolvers(util.Arrays.asList(new SessionIdMehtodArgumentResolver))
+    handler.setDestinationPrefixes(util.Arrays.asList("/app/"))
+    handler.setMessageConverter(messageConverter())
+    dispatchChannel().subscribe(handler)
+    handler
+  }
+
 }
+
