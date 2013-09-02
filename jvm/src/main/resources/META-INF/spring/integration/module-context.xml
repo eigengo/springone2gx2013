@@ -23,4 +23,14 @@
     <rabbit:connection-factory id="connectionFactory" host="localhost" channel-cache-size="10" />
     <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" />
 
+    <rabbit:admin id="rabbitAdmin" connection-factory="connectionFactory" auto-startup="true"/>
+
+    <rabbit:queue name="sogx.recog.queue" declared-by="rabbitAdmin"/>
+
+    <rabbit:direct-exchange name="sogx.exchange" declared-by="rabbitAdmin">
+        <rabbit:bindings>
+            <rabbit:binding queue="sogx.recog.queue" key="sogx.recog.key" />
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
 </beans>
