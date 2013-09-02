@@ -26,4 +26,29 @@ import org.springframework.integration.channel.DirectChannel
  */
 trait CoreConfig {
 
+  // -- The boring components
+
+  // Decodes incoming MJPEG chunks into frames that can be sent to RMQ
+  @Bean def mjpegDecoder() = new MJPEGDecoder()
+
+  // Decodes incoming chunks into frames that can be sent to RMQ
+  @Bean def chunkDecoder() = new ChunkDecoder(mjpegDecoder())
+
+  // Recog service is a gateway to the recognition flow
+  @Bean def recogService(): RecogService = new RecogService(recogRequest())
+
+  // -- The additional components that the core depends on
+
+  // implementations must provide appropriate Executor
+  @Bean def asyncExecutor(): Executor
+
+  // implementations must provide RecogServiceActivator, which will be executed when we have the coins from the
+  // video frames
+  @Bean def recogServiceActivator(): RecogServiceActivator
+
+  // -- The integration plumbing
+
+  // the channel onto which the requests will go
+  @Bean def recogRequest() = new DirectChannel()
+
 }
