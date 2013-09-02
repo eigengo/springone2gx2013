@@ -37,6 +37,9 @@ trait CoreConfig {
   // Recog service is a gateway to the recognition flow
   @Bean def recogService(): RecogService = new RecogService(recogRequest())
 
+  // maintains the recognition sessions
+  @Bean def recogSessions() = new RecogSessions(dispatchMessagingTemplate())
+
   // -- The additional components that the core depends on
 
   // implementations must provide appropriate Executor
@@ -50,5 +53,19 @@ trait CoreConfig {
 
   // the channel onto which the requests will go
   @Bean def recogRequest() = new DirectChannel()
+
+  // the message converter for the payloads
+  @Bean def messageConverter() = new DelegatingJsonMessageConverter(new MappingJackson2MessageConverter())
+
+  // the channel that connects to the WS clients
+  @Bean def dispatchChannel() = new ExecutorSubscribableChannel(asyncExecutor())
+
+  // MessagingTemplate (and MessageChannel) to dispatch messages to for further processing
+  // All MessageHandler beans above subscribe to this channel
+  @Bean def dispatchMessagingTemplate(): SimpMessageSendingOperations = {
+    val template = new SimpMessagingTemplate(dispatchChannel())
+    template.setMessageConverter(messageConverter())
+    template
+  }
 
 }
