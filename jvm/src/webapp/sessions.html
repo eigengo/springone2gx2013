@@ -18,5 +18,19 @@
     <script src="assets/js/components.js"></script>
 </head>
 <body>
+<div ng-controller="SessionsCtrl">
+    <tabs>
+        <pane title="Raw">
+            <h3>Raw data</h3>
+            <pre><code>{{sessions}}</code></pre>
+        </pane>
+        <pane title="Canvas">
+            <h3>Visual representation</h3>
+            <div ng-repeat="coins in sessions">
+                <canvas display="{{coins}}" fill="red" scale="0.4" dx="40" dy="80" width="500" height="386"></canvas>
+            </div>
+        </pane>
+    </tabs>
+</div>
 </body>
 </html>
