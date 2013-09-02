@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.springframework:spring-web:4.0.0.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/spring-web/jars/spring-web-4.0.0.BUILD-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/spring-web/docs/spring-web-4.0.0.BUILD-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.springframework/spring-web/srcs/spring-web-4.0.0.BUILD-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

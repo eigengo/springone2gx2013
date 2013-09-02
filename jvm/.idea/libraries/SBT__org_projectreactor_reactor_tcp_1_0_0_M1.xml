@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.projectreactor:reactor-tcp:1.0.0.M1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.projectreactor/reactor-tcp/jars/reactor-tcp-1.0.0.M1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.projectreactor/reactor-tcp/docs/reactor-tcp-1.0.0.M1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.projectreactor/reactor-tcp/srcs/reactor-tcp-1.0.0.M1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

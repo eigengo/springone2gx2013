@@ -1,0 +1,1 @@
+/usr/bin/cc  -O3 -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/test_tables.dir/test_tables.c.o  -o test_tables  ../librabbitmq/librabbitmq.1.0.1.dylib /usr/lib/libssl.dylib /usr/lib/libcrypto.dylib 

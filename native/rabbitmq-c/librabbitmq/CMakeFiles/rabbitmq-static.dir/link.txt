@@ -1,0 +1,2 @@
+/usr/bin/ar cr librabbitmq.a  CMakeFiles/rabbitmq-static.dir/amqp_framing.c.o CMakeFiles/rabbitmq-static.dir/amqp_api.c.o CMakeFiles/rabbitmq-static.dir/amqp_connection.c.o CMakeFiles/rabbitmq-static.dir/amqp_mem.c.o CMakeFiles/rabbitmq-static.dir/amqp_socket.c.o CMakeFiles/rabbitmq-static.dir/amqp_table.c.o CMakeFiles/rabbitmq-static.dir/amqp_url.c.o CMakeFiles/rabbitmq-static.dir/amqp_tcp_socket.c.o CMakeFiles/rabbitmq-static.dir/amqp_timer.c.o CMakeFiles/rabbitmq-static.dir/amqp_openssl.c.o
+/usr/bin/ranlib librabbitmq.a

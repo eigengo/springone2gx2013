@@ -1,0 +1,45 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="sogx:Web exploded">
+    <output-path>$PROJECT_DIR$/target/idea_output/artifacts/sogx_Web_exploded.war</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="sogx/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="sogx" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="SBT: org.scala-lang:scala-library:2.10.2" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-context:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-aop:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-beans:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-core:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: commons-logging:commons-logging:1.1.1" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-expression:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-tx:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-messaging:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-webmvc:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-web:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework:spring-websocket:4.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework.integration:spring-integration-core:3.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: com.eaio.uuid:uuid:3.2" />
+          <element id="library" level="project" name="SBT: org.springframework.retry:spring-retry:1.0.2.RELEASE" />
+          <element id="library" level="project" name="SBT: org.springframework.integration:spring-integration-amqp:3.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: org.springframework.amqp:spring-rabbit:1.2.0.RELEASE" />
+          <element id="library" level="project" name="SBT: com.rabbitmq:amqp-client:3.1.3" />
+          <element id="library" level="project" name="SBT: org.springframework.amqp:spring-amqp:1.2.0.RELEASE" />
+          <element id="library" level="project" name="SBT: org.springframework.integration:spring-integration-stream:3.0.0.BUILD-SNAPSHOT" />
+          <element id="library" level="project" name="SBT: com.fasterxml.jackson.core:jackson-databind:2.2.2" />
+          <element id="library" level="project" name="SBT: com.fasterxml.jackson.core:jackson-annotations:2.2.2" />
+          <element id="library" level="project" name="SBT: com.fasterxml.jackson.core:jackson-core:2.2.2" />
+          <element id="library" level="project" name="SBT: org.projectreactor:reactor-core:1.0.0.M1" />
+          <element id="library" level="project" name="SBT: org.slf4j:slf4j-api:1.7.5" />
+          <element id="library" level="project" name="SBT: com.lmax:disruptor:3.1.1" />
+          <element id="library" level="project" name="SBT: com.github.stephenc.high-scale-lib:high-scale-lib:1.1.4" />
+          <element id="library" level="project" name="SBT: org.projectreactor:reactor-tcp:1.0.0.M1" />
+          <element id="library" level="project" name="SBT: io.netty:netty-all:4.0.0.CR7" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

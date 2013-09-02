@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/janmachacek/Talks/springone2gx2013/native/rabbitmq-c/tests/test_parse_url.c
+config.h
+/Users/janmachacek/Talks/springone2gx2013/native/rabbitmq-c/tests/config.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+inttypes.h
+-
+amqp.h
+-
+
+librabbitmq/amqp.h
+sys/uio.h
+-
+stddef.h
+-
+stdint.h
+-
+amqp_framing.h
+-
+
+librabbitmq/amqp_framing.h
+amqp.h
+-
+
+librabbitmq/config.h
+

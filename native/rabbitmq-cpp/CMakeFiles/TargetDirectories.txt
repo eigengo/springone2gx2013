@@ -1,0 +1,1 @@
+/Users/janmachacek/Talks/springone2gx2013/native/rabbitmq-cpp/CMakeFiles/SimpleAmqpClient.dir

@@ -1,0 +1,12 @@
+/usr/local/lib/libSimpleAmqpClient.a
+/usr/local/include/SimpleAmqpClient/SimpleAmqpClient.h
+/usr/local/include/SimpleAmqpClient/AmqpException.h
+/usr/local/include/SimpleAmqpClient/Channel.h
+/usr/local/include/SimpleAmqpClient/BasicMessage.h
+/usr/local/include/SimpleAmqpClient/Util.h
+/usr/local/include/SimpleAmqpClient/AmqpResponseLibraryException.h
+/usr/local/include/SimpleAmqpClient/ConnectionClosedException.h
+/usr/local/include/SimpleAmqpClient/ConsumerTagNotFoundException.h
+/usr/local/include/SimpleAmqpClient/Envelope.h
+/usr/local/include/SimpleAmqpClient/MessageReturnedException.h
+/usr/local/include/SimpleAmqpClient/Table.h

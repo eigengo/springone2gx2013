@@ -1,0 +1,32 @@
+# Travis-CI Build for rabbitmq-c
+# see travis-ci.org for details
+
+# As CMake is not officially supported we use erlang VMs
+language: c
+
+compiler:
+  - gcc
+  - clang
+
+# Settings to try
+env:
+    # OpenSSL
+  - PRE_CONFIGURE=true CONFIGURE="cmake .. -DCMAKE_INSTALL_PREFIX=../_install" BUILD_INSTALL="cmake --build . --target install"
+    # gnutls
+    #- PRE_CONFIGURE=true CONFIGURE="cmake .. -DSSL_ENGINE=GnuTLS -DCMAKE_INSTALL_PREFIX=../_install" BUILD_INSTALL="cmake --build . --target install"
+    # PolarSSL
+    #- PRE_CONFIGURE=true CONFIGURE="cmake .. -DSSL_ENGINE=PolarSSL -DCMAKE_INSTALL_PREFIX=../_install" BUILD_INSTALL="cmake --build . --target install"
+  - PRE_CONFIGURE="autoreconf -i" CONFIGURE="../configure --prefix=`pwd`/_install" BUILD_INSTALL="make install"
+
+# Make sure CMake is installed
+install:
+  - sudo apt-get install cmake libpopt-dev libpolarssl-dev libgnutls-dev
+
+# Run the Build script
+script:
+ - mkdir _build
+ - $PRE_CONFIGURE && cd _build && $CONFIGURE && $BUILD_INSTALL
+
+# Run Tests
+after_script:
+ - if [ -f CTestTestfile.cmake ]; then ctest -V . ; fi

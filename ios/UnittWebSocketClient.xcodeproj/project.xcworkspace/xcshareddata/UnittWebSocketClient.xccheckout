@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BCA44821-0C51-4951-B81C-A83A75E0EC17</string>
+	<key>IDESourceControlProjectName</key>
+	<string>UnittWebSocketClient</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>48B30525-A4E7-4542-92E1-F95C1CA540F1</key>
+		<string>http://unitt.googlecode.com/svn/projects</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iOS/UnittWebSocketClient/trunk/UnittWebSocketClient.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>48B30525-A4E7-4542-92E1-F95C1CA540F1</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>48B30525-A4E7-4542-92E1-F95C1CA540F1</key>
+		<string>http://unitt.googlecode.com/svn</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://unitt.googlecode.com/svn/projects/iOS/UnittWebSocketClient/trunk/UnittWebSocketClient.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>48B30525-A4E7-4542-92E1-F95C1CA540F1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>48B30525-A4E7-4542-92E1-F95C1CA540F1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>unitt-read-only</string>
+		</dict>
+	</array>
+</dict>
+</plist>

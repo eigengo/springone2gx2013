@@ -1,0 +1,13 @@
+/* vim:set ft=c ts=2 sw=2 sts=2 et cindent: */
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define VERSION "${VERSION}"
+
+#ifndef __cplusplus
+# define inline ${C_INLINE_KEYWORD}
+#endif
+
+#cmakedefine HAVE_HTONLL
+
+#endif /* CONFIG_H */

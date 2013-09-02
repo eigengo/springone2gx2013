@@ -1,0 +1,9 @@
+/usr/local/lib/pkgconfig/librabbitmq.pc
+/usr/local/lib/librabbitmq.1.0.1.dylib
+/usr/local/lib/librabbitmq.1.dylib
+/usr/local/lib/librabbitmq.dylib
+/usr/local/lib/librabbitmq.a
+/usr/local/include/amqp.h
+/usr/local/include/amqp_framing.h
+/usr/local/include/amqp_tcp_socket.h
+/usr/local/include/amqp_ssl_socket.h

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9EE2B297-2645-422C-BBE0-90045F2087AA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ios</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EA0BE29A-8FDD-4995-862F-A99AC408903A</key>
+		<string>ssh://github.com/janm399/springone2gx2013.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/ios.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EA0BE29A-8FDD-4995-862F-A99AC408903A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/janm399/springone2gx2013.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EA0BE29A-8FDD-4995-862F-A99AC408903A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EA0BE29A-8FDD-4995-862F-A99AC408903A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>springone2gx2013</string>
+		</dict>
+	</array>
+</dict>
+</plist>
