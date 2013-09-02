@@ -7,4 +7,8 @@ package org.eigengo
  */
 package object sogx {
 
+  type ImageData = Array[Byte]
+  type ChunkData = Array[Byte]
+  type CoinResponse = String
+
 }
