@@ -9,4 +9,18 @@
 		http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <int:chain input-channel="recogRequest">
+        <int:service-activator id="activator" method="decodeFrame" ref="chunkDecoder"/>
+        <int:splitter id="splitter" apply-sequence="false"/>
+        <int-amqp:outbound-gateway exchange-name="sogx.exchange" routing-key="sogx.recog.key"
+                                   reply-timeout="250"
+                                   mapped-reply-headers="*" mapped-request-headers="*"
+                                   amqp-template="amqpTemplate"/>
+        <int:object-to-string-transformer/>
+        <int:service-activator ref="recogServiceActivator" method="onCoinResponse"/>
+    </int:chain>
+
+    <rabbit:connection-factory id="connectionFactory" host="localhost" channel-cache-size="10" />
+    <rabbit:template id="amqpTemplate" connection-factory="connectionFactory" />
+
 </beans>
