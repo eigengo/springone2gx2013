@@ -18,5 +18,12 @@
     <script src="assets/js/components.js"></script>
 </head>
 <body>
+<div id="mordor" ng-controller="SessionsCtrl">
+    <div class="sessions">
+        <div ng-class="{coins: true, glow: coins.hasRing}" ng-repeat="coins in sessions">
+            <canvas display="{{coins}}" class="mordor" fill="#FDFDB8" scale="0.2"></canvas>
+        </div>
+    </div>
+</div>
 </body>
 </html>
