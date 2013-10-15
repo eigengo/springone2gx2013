@@ -17,5 +17,5 @@ gen
 target
 out/
 build/
-*.cmake
 workspace.xml
+.idea*
